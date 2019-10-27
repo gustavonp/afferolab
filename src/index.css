@@ -1,0 +1,54 @@
+html, body{
+  height: 100%; 
+  width: 100%;
+  margin: 0;
+}
+
+body, #root {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 12pt;
+  margin: 0;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.conteudoHome{
+  margin-top: 12%;
+  margin-left: 5%;
+  width:30%;
+  text-align: left;
+  color:#6e6f72;
+}
+
+.conteudoHome h1{
+  font-weight: bold;
+  color:#74308a;
+  font-size: 2em;
+}
+
+.conteudoHome b{
+  color:#ca2231;
+}
+
+.home NavLink {
+  margin-top: 5px;
+  background: #ca2231;
+  background-image: linear-gradient(to right, #ca2231, #743089);
+  border-radius: 11px;
+  border: none;
+  font-family: Arial;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px 15px 10px 15px;
+}
+
+.App{
+  text-align: center;
+}
+
+.containerIndicadores{
+  background-color: red;
+}
