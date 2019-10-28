@@ -3,8 +3,10 @@ import React from 'react'
 const Error = () => {
   return(
     <div>
-          <p>Error: Page does not exist!</p>
-       </div>
+      <center>
+        <p>Erro 404: Essa página não existe!</p>
+      </center>
+    </div>
   );
 }
 

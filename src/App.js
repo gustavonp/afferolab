@@ -6,9 +6,6 @@ import Home from './routes/home/home';
 import instrucoes from './routes/instrucoes/instrucoes';
 import gameQuiz from './routes/game/game';
 import Error from './routes/Error';
-
-//import Navigation from './components/Navigation';
-
 class App extends Component {
   render(){
     return(

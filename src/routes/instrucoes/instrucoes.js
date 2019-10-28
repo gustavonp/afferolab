@@ -7,7 +7,11 @@ import arte_indicadores_branco from '../../imagens/arte_indicadores_branco.png';
 const instrucoes = () => {
   return(
     <div className="instrucoes">
-        <Indicadores />
+        <Indicadores
+          satisfacao={0}
+          fidelizacao={0}
+          questoesRandomizar={10}
+        />
       <div className="conteudoInstrucoes">
         <div className="instrucaoLeft">
           <p>Ao lado, estão os três indicadores do game. Quando você tomar suas decisões, eles poderão aumentar ou diminuir. Por isso, acompanhe-os para saber sua evolução no jogo.</p>

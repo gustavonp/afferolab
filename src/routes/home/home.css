@@ -51,6 +51,7 @@ body {
   font-weight: bold;
   font-size: 1.2em;
   padding: 10px 15px 10px 15px;
+  position: absolute;
 }
 
 .App{
