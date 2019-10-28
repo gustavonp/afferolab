@@ -49,6 +49,58 @@ body, #root {
   text-align: center;
 }
 
-.containerIndicadores{
-  background-color: red;
+.indicadoresContainer{
+  position: absolute;
+  right:2%;
+  top:5%;
+  color:#fff;
+  font-size: 0.8em;
+}
+
+.indicadoresContainer img{
+  margin-right:10px;
+}
+
+.areaIndicadores{
+  margin-top:20px;
+  position: relative;
+  background-color:#ca2231;
+  border-radius: 6px;
+  width:300px;
+  float:right;
+  padding: 20px 10px;
+}
+
+.areaIndicadores hr{
+  clear: both;
+  border:none;
+}
+
+.indicadorEtiqueta p{
+  width:30%;
+  float:left;
+  margin:0px 0px 8px 0px;
+}
+
+.indicadorContainer{
+  width:70%;
+  background-color:#fff;
+  border-radius: 4px;
+  height:16px;
+  width:200px;
+  padding:4px;
+  float:right;
+}
+
+.indicadorSatisfacao, .indicadorFidelizacao{
+  border-radius: 5px;
+  height:100%;
+}
+
+.indicadorSatisfacao{
+  background-color:#336AB2;
+}
+
+.indicadorFidelizacao{
+  background-color:#68469B;
 }

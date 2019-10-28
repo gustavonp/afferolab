@@ -1,6 +1,6 @@
 import React from 'react';
 import LocalStorageDatabase from '../components/database/database';
-import { ordemDasPerguntas, coletaDadosDatabase } from '../utilities';
+import { coletaDadosDatabase } from '../utilities';
 import Indicadores from '../components/indicadores/Indicadores';
 
 class IniciaJogo extends React.Component {
@@ -27,24 +27,47 @@ class IniciaJogo extends React.Component {
     });
   }
 
+  finalizaJogo(){
+    return(
+      <div className="gameQuiz">
+        <div className="conteudoGame">
+          <p>Veja sua <i>performance</i> em cada indicador:</p>
+          <p>Satisfação: {this.state.satisfacao}</p>
+          <p>Fidelização: {this.state.fidelizacao}</p>
+        </div>
+      </div>
+    );
+  }
+
   confirmaOpcao(){
     var rodada = this.state.rodada + 1;
     var satisfacao = this.state.satisfacao + this.state.satisfacaoTemp;
     var fidelizacao = this.state.fidelizacao + this.state.fidelizacaoTemp;
 
-    if(rodada > this.database.perguntas.questoes_randomizar){
+    //if(rodada === this.database.perguntas.questoes_randomizar){
+
       //find a way to go to a next page
-    }else{
+    //this.finalizaJogo();
+    //}else{
       this.setState({
         satisfacao: satisfacao,
         fidelizacao: fidelizacao,
         rodada: rodada
       });
-    }
+    //}
   }
 
   render(){
 
+    if(this.state.rodada === this.database.perguntas.questoes_randomizar){
+      return(
+        <div className="gameQuiz">
+          <div className="conteudoGame">
+            {this.finalizaJogo()}
+          </div>
+        </div>
+      );
+    }else{
     var pergunta = this.database.perguntas.banco_questoes[this.state.ordem[this.state.rodada]];
 
       return(
@@ -53,6 +76,7 @@ class IniciaJogo extends React.Component {
           <Indicadores
             satisfacao={this.state.satisfacao}
             fidelizacao={this.state.fidelizacao}
+            questoesRandomizar={this.database.perguntas.questoes_randomizar}
           />
         </div>
         <div className="conteudoGame">
@@ -84,14 +108,12 @@ class IniciaJogo extends React.Component {
         </div>
       </div>
     );
+    }
   }
 }
 
 const gameQuiz = () => {
-
   var arrQuestions = coletaDadosDatabase();
-
-  console.log(arrQuestions);
 
   return(
     <div>
