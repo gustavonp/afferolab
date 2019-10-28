@@ -5,14 +5,20 @@ html, body{
 }
 
 body {
+  font-size: 12pt;
+  margin: 0;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.home{
+  position: absolute;
+  height: 100%;
+  background-image:url('../../imagens/bg1.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-size: 12pt;
-  margin: 0;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  background-image:url('../../imagens/bg1.png');
+  margin-top:0;
 }
 
 .conteudoHome{

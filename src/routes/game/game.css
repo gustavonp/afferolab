@@ -5,15 +5,34 @@ html, body{
 }
 
 body {
+  font-size: 12pt;
+  margin: 0;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.gameQuiz{
+  position: absolute;
+  height: 100%;
+  width: 100%;
   background-image:url('../../imagens/bg3.png');
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-size: 12pt;
-  margin: 0;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.resultados{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image:url('../../imagens/bg4.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 0;
 }
 
 .conteudoGame{
@@ -44,6 +63,7 @@ body {
   font-weight: bold;
   font-size: 1em;
   padding: 10px 15px 10px 15px;
+  cursor: pointer;
 }
 
 .App{
@@ -58,6 +78,7 @@ body {
   color:#68469B;
   height:30px;
   width:30px;
+  cursor:pointer;
 }
 
 .conteudoGame button:not(.botaoConfirma):hover{
@@ -80,7 +101,7 @@ body {
 .finalizaQuiz{
   background-color:#ca2231;
   border-radius: 11px;
-  margin-top: 20%;
+  margin-top: 10%;
   width:60%;
   padding: 10px;
 

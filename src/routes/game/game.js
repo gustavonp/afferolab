@@ -17,8 +17,8 @@ class IniciaJogo extends React.Component {
       rodada: 0,
       satisfacao: 0,
       fidelizacao: 0,
-      satisfacaoTemp: 0,
-      fidelizacaoTemp: 0
+      satisfacaoTemp: null,
+      fidelizacaoTemp: null
     }
   }
 
@@ -31,6 +31,7 @@ class IniciaJogo extends React.Component {
 
   finalizaJogo(){
     return(
+      <div className="resultados">
       <center>
         <div className="finalizaQuiz">
         <h2><img className="iconQuiz" src={arte_indicadores_branco} /> Veja sua <i>performance</i> em cada indicador:</h2>
@@ -42,19 +43,26 @@ class IniciaJogo extends React.Component {
         </div>
       <div className="sombra"></div>
       </center>
+      </div>
     );
   }
 
   confirmaOpcao(){
-    var rodada = this.state.rodada + 1;
-    var satisfacao = this.state.satisfacao + this.state.satisfacaoTemp;
-    var fidelizacao = this.state.fidelizacao + this.state.fidelizacaoTemp;
 
-    this.setState({
-      satisfacao: satisfacao,
-      fidelizacao: fidelizacao,
-      rodada: rodada
-    });
+    if(this.state.satisfacaoTemp != null && this.state.fidelizacaoTemp != null){
+
+      var rodada = this.state.rodada + 1;
+      var satisfacao = this.state.satisfacao + this.state.satisfacaoTemp;
+      var fidelizacao = this.state.fidelizacao + this.state.fidelizacaoTemp;
+      
+      this.setState({
+        satisfacaoTemp: null,
+        fidelizacaoTemp: null,
+        satisfacao: satisfacao,
+        fidelizacao: fidelizacao,
+        rodada: rodada
+      });
+    }
   }
 
   render(){

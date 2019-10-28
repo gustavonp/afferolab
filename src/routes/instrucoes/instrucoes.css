@@ -5,15 +5,21 @@ html, body{
 }
 
 body {
-  background-image:url('../../imagens/bg2.png');
   background-repeat: no-repeat;
+  font-size: 12pt;
+  margin: 0;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.instrucoes{
+  position: absolute;
+  height: 100%;
+  background-image:url('../../imagens/bg2.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-size: 12pt;
-  margin: 0;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  margin-top:0;
 }
 
 .conteudoInstrucoes{
