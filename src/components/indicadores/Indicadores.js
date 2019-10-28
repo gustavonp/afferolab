@@ -54,9 +54,9 @@ class Indicadores extends React.Component {
 
   render() {
 
+      //<img src={arte_indicadores} />
     return(
     <div className="indicadoresContainer">
-      <img src={arte_indicadores} />
       {this.barraDeProgressao()}  
     </div>
     )

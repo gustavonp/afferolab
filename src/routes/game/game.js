@@ -1,7 +1,9 @@
 import React from 'react';
-import LocalStorageDatabase from '../components/database/database';
-import { coletaDadosDatabase } from '../utilities';
-import Indicadores from '../components/indicadores/Indicadores';
+import LocalStorageDatabase from '../../components/database/database';
+import { coletaDadosDatabase } from '../../utilities';
+import Indicadores from '../../components/indicadores/Indicadores';
+import './game.css';
+import arte_indicadores_branco from '../../imagens/arte_indicadores_branco.png';
 
 class IniciaJogo extends React.Component {
 
@@ -29,13 +31,17 @@ class IniciaJogo extends React.Component {
 
   finalizaJogo(){
     return(
-      <div className="gameQuiz">
-        <div className="conteudoGame">
-          <p>Veja sua <i>performance</i> em cada indicador:</p>
-          <p>Satisfação: {this.state.satisfacao}</p>
-          <p>Fidelização: {this.state.fidelizacao}</p>
+      <center>
+        <div className="finalizaQuiz">
+        <h2><img className="iconQuiz" src={arte_indicadores_branco} /> Veja sua <i>performance</i> em cada indicador:</h2>
+          <Indicadores
+            satisfacao={this.state.satisfacao}
+            fidelizacao={this.state.fidelizacao}
+            questoesRandomizar={this.database.perguntas.questoes_randomizar}
+          />
         </div>
-      </div>
+      <div className="sombra"></div>
+      </center>
     );
   }
 
@@ -44,27 +50,19 @@ class IniciaJogo extends React.Component {
     var satisfacao = this.state.satisfacao + this.state.satisfacaoTemp;
     var fidelizacao = this.state.fidelizacao + this.state.fidelizacaoTemp;
 
-    //if(rodada === this.database.perguntas.questoes_randomizar){
-
-      //find a way to go to a next page
-    //this.finalizaJogo();
-    //}else{
-      this.setState({
-        satisfacao: satisfacao,
-        fidelizacao: fidelizacao,
-        rodada: rodada
-      });
-    //}
+    this.setState({
+      satisfacao: satisfacao,
+      fidelizacao: fidelizacao,
+      rodada: rodada
+    });
   }
 
   render(){
 
     if(this.state.rodada === this.database.perguntas.questoes_randomizar){
       return(
-        <div className="gameQuiz">
-          <div className="conteudoGame">
-            {this.finalizaJogo()}
-          </div>
+        <div>
+          {this.finalizaJogo()}
         </div>
       );
     }else{
@@ -72,40 +70,39 @@ class IniciaJogo extends React.Component {
 
       return(
         <div className="gameQuiz">
-        <div className="indicadores">
           <Indicadores
             satisfacao={this.state.satisfacao}
             fidelizacao={this.state.fidelizacao}
             questoesRandomizar={this.database.perguntas.questoes_randomizar}
           />
-        </div>
+          <center>
         <div className="conteudoGame">
           <h2>Pergunta {this.state.rodada + 1}: {pergunta.pergunta}</h2>
-          <br/>
 
           <ul>
             <li>
               <button 
                 onClick={() => this.seguraValor(pergunta.alternativas[0].impacto_indicadores.satisfacao, pergunta.alternativas[0].impacto_indicadores.fidelizacao)}
-              >[A] {pergunta.alternativas[0].descricao}</button>
+              >A </button> {pergunta.alternativas[0].descricao}
             </li>
             <li>
               <button 
                 onClick={() => this.seguraValor(pergunta.alternativas[0].impacto_indicadores.satisfacao, pergunta.alternativas[1].impacto_indicadores.fidelizacao)}
-              >[B] {pergunta.alternativas[1].descricao}</button>
+              >B </button> {pergunta.alternativas[1].descricao}
             </li>
             <li>
               <button 
                 onClick={() => this.seguraValor(pergunta.alternativas[2].impacto_indicadores.satisfacao, pergunta.alternativas[0].impacto_indicadores.fidelizacao)}
-              >[C] {pergunta.alternativas[2].descricao}</button>
+              >C </button> {pergunta.alternativas[2].descricao}
             </li>
           </ul>
           <div>
-            <button
+            <button className="botaoConfirma"
               onClick={() => this.confirmaOpcao()}
             >CONFIRMAR</button>
           </div>
         </div>
+        </center>
       </div>
     );
     }

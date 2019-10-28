@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-import Home from './routes/Home';
-import instrucoes from './routes/instrucoes';
-import gameQuiz from './routes/gameQuiz';
+import Home from './routes/home/home';
+import instrucoes from './routes/instrucoes/instrucoes';
+import gameQuiz from './routes/game/game';
 import Error from './routes/Error';
 
 //import Navigation from './components/Navigation';
